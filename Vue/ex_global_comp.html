@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header {
+            text-align: center;
+            color: purple;
+            background-color: teal;
+        }
+    </style>
+</head>
+<body>
+    <div id="app1">
+        <!-- Header 컴포넌트 정의-->
+        <header_component></header_component>
+        <!-- Body 컴포넌트 -->
+        <body_component></body_component>
+        <!-- Footer 컴포넌트 -->
+        <footer_component></footer_component>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        // header 컴포넌트 정의
+        Vue.component("header_component", {
+            /* html */
+            template: 
+            `
+                <div class="header">
+                    <p><h4>저의 블로그 사이트에 오신 것을 환영합니다</h4></p>
+                </div>
+            `
+        });
+        // body 컴포넌트 정의
+        Vue.component("body_component", {
+            // 아래처럼 주석 사이 html 넣으면 태그 하이라이팅 되서 보기 편함
+            /* html */
+            template: 
+            `
+                <div class>
+                    <p>body_component</p>
+                </div>
+            `
+        });
+        // footer 컴포넌트 정의
+        Vue.component("footer_component", {
+            /* html */
+            template: 
+            `
+                <div>
+                    <p>footer_component</p>
+                </div>
+            `
+        });
+        // Vue를 만들어야 랜더링이 생성됨
+        new Vue ({
+            el: "#app1",
+        })
+    </script>
+</body>
+</html>

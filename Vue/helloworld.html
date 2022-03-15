@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>First Vue</p>
+    <div id="app">
+        {{ mess }}
+    </div>
+
+    <p>Second Vue</p>
+    <div id="app2">
+        {{ mess }}
+    </div>
+
+    <p>Third Vue</p>
+    <div id="app3">
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app', 
+            data: {
+                mess: "Hello",
+            }
+        });
+
+        new Vue({
+            el: '#app2',
+            data: {
+                mess: "또 다른 뷰를 만들었습니다"
+            }
+        });
+
+        new Vue({
+            el: '#app3',
+            data: {
+                mess: "템플릿으로 만들었습니다"
+            },
+            template: "<h3>{{ mess }}</h3>"
+            // template: `<h3>{{ mess }}</h3>` 쌍따옴표 대신 백틱 사용 가능
+        });
+
+        // 연습문제 1. html 새로운 뷰를 만들고 출력해보세요.
+        // 출력 : 또 다른 뷰를 만들었습니다.
+    </script>
+</body>
+</html>
